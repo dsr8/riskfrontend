@@ -1,0 +1,416 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+/* Navbar Styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  margin: 0;
+}
+/* div#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+
+.navbar {
+  background: #fff;
+  padding: 15px 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  left: 0;
+  z-index: 1000;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Container to align content */
+
+/* Logo Styling */
+/* .logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+} */
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Nav Items */
+.nav-links li {
+  display: inline-block;
+}
+/* Nav Links Styling */
+.nav-links a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 7px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* Hover Effect */
+
+.nav-links a:hover {
+  background: #09aeed;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.body-content {
+    text-align: right;
+    margin-top: 80px;
+    margin-right: 20px;
+}
+
+.add-risk-button {
+  font-size: 16px;
+  border: 2px solid #000000;
+  padding: 7px 15px;
+  color: #000000;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #fff;
+}
+.add-risk-button:hover {
+  background: #fff;
+  border: 2px solid #000000;
+  transform: scale(1.05);
+  color: #000000;
+}
+.body-content {
+  text-align: right;
+  margin-top: 100px;
+  margin-right: 54px;
+  margin-bottom: 5px;
+}
+h1.logo {
+  font-size: 30px;
+  color: #fff;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav-links {
+      margin-top: 10px;
+      gap: 15px;
+  }
+}
+
+
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  color: white;
+  font-weight: 400;
+  /* line-height: normal; */
+  padding: 4%;
+  border-radius: -2%;
+  border: 1px solid white;
+  background-color: #252a3c;
+  padding: 30px;
+  border-radius: 10px;
+  width: 940px;
+  max-height: 100vh; 
+  overflow-y: auto; /* Enables vertical scrolling if content overflows */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-bottom: 25px;
+}
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin-top: 0;
+}
+.modal-content input, .modal-content textarea, .modal-content select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #1a1f2c;
+  margin-top: 1%;
+  color: #ffffff;
+  font-family: "Poppins", serif;
+}
+.modal-content form label {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins", serif;
+}
+.riskname {
+  margin-top: 6px;
+}
+.riskname input {
+  padding: 0;
+}
+.modal-content p {
+  font-size: 14px;
+  font-family: "Poppins", serif;
+  font-weight: 500;
+}
+select option {
+  background-color: #ffff; /* Background color for options */
+  color: #3b3a3a; /* Text color */
+}
+/* Placeholder color */
+textarea::placeholder {
+  font-family: "Gill Sans", sans-serif;
+  color: #79797a; /* Change placeholder text color */
+  opacity: 1; /* Ensure full visibility */
+}
+.modal-content button:hover {
+  background-color: #332945;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.submit-btn {
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+  color: #000000;
+  font-weight: 600;
+  border-radius: 7px;
+  font-family: "Poppins", serif;
+  font-size: 16px;
+  background: #ffffff;
+  border: 1px solid #1a1f2c;
+  margin: auto;
+  display: block;
+  margin-top: 15px;
+  line-height: 24px;
+}
+.modal-content button[type="button"] {
+  background-color: #1a1f2c;
+  border: 3px solid #fff;
+  padding: 0px 8px;
+  color: #fff;
+  border-radius: 5px;
+}
+.modal-content button[type="button"]:hover {
+  background-color: #332945;
+}
+.modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+.modal-close-btn:hover {
+  color: red;
+}
+/*cards dashboard*/
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 100px;
+  /* background-color: #0ab9fc36; */
+}
+
+/* Matrix Container */
+.matrix-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+  background: white; /* White background */
+  color: #000000;
+}
+.half-circle-ring {
+  width: 110px;
+  height: 55px;
+  border: 9px solid rgb(255, 247, 0);
+  border-radius: 100px 100px 0 0;
+  border-bottom: none;
+  background: transparent;
+  margin: auto;
+  margin-top: 40px;
+  position: relative;
+}
+
+.risk-bar {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.risk-status-bar {
+  text-align: center;
+}
+.risk-status-bar text {
+  font-size: 14px;
+  font-weight: 500;
+}
+.risk-status-bar p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.risk-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recharts-responsive-container {
+  min-width: 300px !important;
+}
+
+.MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-0\.5.css-bxifn2-MuiGrid-root {
+  gap: 10px;
+  width: 240px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 15px;
+
+}
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.css-9xyp3s-MuiPaper-root-MuiCard-root {
+  background: #ffec9f;
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+h4.MuiTypography-root.MuiTypography-h4.css-1xo7b9a-MuiTypography-root {
+  font-size: 30px !important;
+  font-weight: 600 !important;
+}
+p.MuiTypography-root.MuiTypography-body1.css-rizt0-MuiTypography-root {
+  font-size: 16px;
+  font-weight: 600;
+}
+.MuiBox-root.css-629rsz {
+  background-color: #fff !important;
+  width: 40px;
+  height: 40px;
+}
+.MuiBox-root.css-1ny1zu1 {
+  width: 40px;
+  height: 40px;
+}
+.MuiBox-root.css-6nq4sc {
+  padding: 0px 0 30px;
+  height: 240px;
+}
+h1.risk-name {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 30px 0;
+}
+.MuiBox-root.css-1k3zjzt {
+  background: transparent !important;
+  padding: 0 !important;
+}
+span.MuiTypography-root.MuiTypography-caption.css-mpaqru-MuiTypography-root {
+  font-size: 16px;
+  font-weight: 600;
+}
+/* 
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.css-9xyp3s-MuiPaper-root-MuiCard-root {
+  max-width: 1260px;
+} */
+h6.MuiTypography-root.MuiTypography-subtitle1.css-1i3tsf3-MuiTypography-root {
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 6px;
+}
+
+p.MuiTypography-root.MuiTypography-body2.css-7ctihp-MuiTypography-root {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 10px;
+}
+span.MuiBox-root.css-3issc4 {
+  padding: 1px 7px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #de7e57;
+}
+.risk-bottom {
+  max-width: 600px;
+  margin: auto;
+}
+
+.MuiBox-root.css-1pj1m38 {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.logout-button {
+  border-style: none;
+  padding: 2px 14px;
+  /* margin: 5px; */
+  cursor: pointer;
+  background-color: blue;
+  font-weight: bold;
+  font-size: 15px;
+  color: #ffff;
+  border-radius: 50px;
+}
