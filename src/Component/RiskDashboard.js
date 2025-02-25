@@ -11,6 +11,7 @@ const heatmapData = Array.from({ length: 25 }, (_, i) => ({
   active: i === 11, // Fixed position for "Medium" (row 3, column 2)
 }));
 
+
 const RiskDashboard = () => {
   return (
     <>
