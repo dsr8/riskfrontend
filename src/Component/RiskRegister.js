@@ -37,7 +37,7 @@ const RiskRegister = () => {
     // Fetch risks from the backend API
     const fetchRisks = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/risk/getRisk');
+        const response = await axios.get('https://addminwebworld.com/laravel/risk/getRisk');
         const reversedRisks = response.data.data.reverse(); // Reverse the array to display the last element first
         setRisks(reversedRisks); //
         // // Set the fetched risks data into state
@@ -74,7 +74,7 @@ const RiskRegister = () => {
 
     try {
       const response = await axios.post(
-        'http://127.0.0.1:8000/risk/store1',
+        'https://addminwebworld.com/laravel/risk/store1',
         formData,
         {
           headers: {
@@ -108,7 +108,7 @@ const RiskRegister = () => {
 
   const handleDelete = async (id) => {
     try{
-        const response = await axios.post('http://127.0.0.1:8000/risk/delrisk',{id},{
+        const response = await axios.post('https://addminwebworld.com/laravel/risk/delrisk',{id},{
             headers: {
               'Content-Type': 'application/json',
             },

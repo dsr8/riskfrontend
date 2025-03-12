@@ -67,7 +67,7 @@ const getColor = (riskLevel) => {
 };
 
 const getDashboardData = async () => {
-  const res = await axios.get("http://127.0.0.1:8000/api/dashboard-data");
+  const res = await axios.get("https://addminwebworld.com/laravel/api/dashboard-data");
   return res.data;
 };
 const Dashboard = () => {

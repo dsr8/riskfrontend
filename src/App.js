@@ -59,7 +59,7 @@ function App() {
   
     try {
       const response = await axios.post(
-        'http://127.0.0.1:8000/risk/store1',
+        'https://addminwebworld.com/laravel/risk/store1',
         formData,
         {
           headers: {
