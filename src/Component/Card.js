@@ -1,6 +1,6 @@
 import React from "react";
 import "./Card.css";
-const Card = ({ title, color}) => {
+const Card = ({ title, color,percent,count}) => {
   return (
     <div className="card">
     
@@ -8,8 +8,8 @@ const Card = ({ title, color}) => {
         <h2 className="card-title">{title}</h2>
         {/* <p className="card-description">{description}</p> */}
         <div className="Progressbar">
-        <span className="prog-name">0</span>
-        <span className="pro-name1">0%</span>
+        <span className="prog-name">{count}</span>
+        <span className="pro-name1">{percent}</span>
         </div> 
       <hr style={{
         

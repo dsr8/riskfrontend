@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, Typography, Box, Grid } from "@mui/material";
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from "recharts";
 
 
-const riskScore = 6; // Fixed score to "Medium"
-const riskLabel = "Medium"; // Fixed risk label
+const riskScore = 10; // Fixed score to "Medium"
+const riskLabel = "Low"; // Fixed risk label
 const heatmapData = Array.from({ length: 25 }, (_, i) => ({
   x: (i % 5) + 1,
   y: Math.floor(i / 5) + 1,
@@ -13,6 +13,8 @@ const heatmapData = Array.from({ length: 25 }, (_, i) => ({
 
 
 const RiskDashboard = () => {
+  console.log("🚀 ~ RiskDashboard ~ heatmapData:", heatmapData)
+  
   return (
     <>
     <h1 className="risk-name">Calculated Risk</h1>
@@ -43,9 +45,10 @@ const RiskDashboard = () => {
             </RadialBarChart>
           </ResponsiveContainer>
           {/* Centered Score */}
-          <Box sx={{ position: "absolute", bottom: 14, textAlign: "center", width: "100%" }}>
+          <Box sx={{ position: "absolute", bottom: -30, textAlign: "center", width: "100%" }}>
             <Typography variant="h4" color="#FF6F00">{riskScore}</Typography>
-            <Typography variant="body1">{riskLabel} Score</Typography>
+            <Typography variant="body1">{riskLabel} </Typography>
+            <Typography sx={{fontSize:15}} variant="body1">{riskLabel} Score</Typography>
           </Box>
         </Box>
 
