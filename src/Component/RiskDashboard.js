@@ -14,6 +14,14 @@ const heatmapData = Array.from({ length: 25 }, (_, i) => ({
 
 const RiskDashboard = () => {
   console.log("🚀 ~ RiskDashboard ~ heatmapData:", heatmapData)
+
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) return null; // Prevents hydration mismatch errors
   
   return (
     <>
