@@ -9,6 +9,7 @@ import axios from "axios";
 import Loading from "./Loading";
 import { faHome, faUsers, faCog, faTachometerAlt, faExclamationTriangle,faClipboardCheck, faChartBar, faFileExport  } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ClientOnly from "./ClientOnly";
 const getSessionData = () => {
   const token = sessionStorage.getItem("authToken");
   const user = JSON.parse(sessionStorage.getItem("user")); // Parse the stored user object
@@ -72,6 +73,7 @@ const getDashboardData = async () => {
   return res.data;
 };
 const Dashboard = () => {
+  
   const [user, setUser] = useState(null);
   const [data, setData] = useState(null);
 
@@ -157,7 +159,7 @@ const Dashboard = () => {
           <option value="Last30days">Last 30 days</option>
           <option value="Last90days">Last 90 days</option>
         </select>
-<button className="exportbtn"><FontAwesomeIcon icon={faFileExport}  />Export</button>
+     <button className="exportbtn"><FontAwesomeIcon icon={faFileExport}  />Export</button>
 
       </div>
 
@@ -269,11 +271,13 @@ const Dashboard = () => {
       {/*--------speedometer and boxes-----------*/}
 
       <div>
+      <ClientOnly>
         <RiskDashboard
           heatmapData={data.risk_score.heatmap_data}
           riskLabel={data.risk_score.label}
           riskScore={data.risk_score.score}
         />
+        </ClientOnly>
       </div>
     </>
   );
