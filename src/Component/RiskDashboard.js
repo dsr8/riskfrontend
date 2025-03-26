@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardContent, Typography, Box, Grid } from "@mui/material";
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from "recharts";
-
+import { StyledEngineProvider } from "@mui/material/styles";
 
 const riskScore = 10; // Fixed score to "Medium"
 const riskLabel = "Low"; // Fixed risk label
@@ -25,6 +25,7 @@ const RiskDashboard = () => {
   
   return (
     <>
+       <StyledEngineProvider injectFirst>
     <h1 className="risk-name">Calculated Risk</h1>
     <Card sx={{ maxWidth: 600, textAlign: "center", p: 2, m: "auto", backgroundColor: "#FFF8E1", borderRadius: 3 }}>
       <CardContent>
@@ -114,6 +115,7 @@ const RiskDashboard = () => {
           </Typography>
         </Box>
         </div>
+        </StyledEngineProvider>
     </>
   );
 };

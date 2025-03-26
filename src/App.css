@@ -148,13 +148,13 @@ h1.logo {
 /* Modal Content */
 .modal-content {
   position: relative;
-  color: white;
+  color: #252a3c;
   font-weight: 400;
   /* line-height: normal; */
   padding: 4%;
   border-radius: -2%;
-  border: 1px solid white;
-  background-color: #252a3c;
+  border: 1px solid #252a3c;
+  background-color: #fff;
   padding: 30px;
   border-radius: 10px;
   width: 940px;
@@ -176,9 +176,9 @@ h1.logo {
   margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  background-color: #1a1f2c;
+  background-color: #fcfcfc;
   margin-top: 1%;
-  color: #ffffff;
+  color: #1a1f2c;
   font-family: "Poppins", serif;
 }
 .modal-content form label {
@@ -413,4 +413,57 @@ span.MuiBox-root.css-3issc4 {
   font-size: 15px;
   color: #ffff;
   border-radius: 50px;
+}
+.riskselector {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Adds space between elements */
+  padding: 10px;
+  /* background: #f9f9f9;
+  border-radius: 8px; */
+}
+
+.dropdown {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+  width: 220px;
+  margin-top: 10%;
+}
+
+.dropdown:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  padding: 10px 10px 10px 35px; /* Left padding for the icon */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 371px;
+  margin-top: 10%;
+}
+
+.search-bar:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  color: #888;
+}
+.exportbtn{
+  margin-top: 10%;
 }

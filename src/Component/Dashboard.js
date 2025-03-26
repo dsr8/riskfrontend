@@ -7,7 +7,8 @@ import { Grid, Typography, Box } from "@mui/material";
 import RiskDashboard from "./RiskDashboard";
 import axios from "axios";
 import Loading from "./Loading";
-
+import { faHome, faUsers, faCog, faTachometerAlt, faExclamationTriangle,faClipboardCheck, faChartBar, faFileExport  } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const getSessionData = () => {
   const token = sessionStorage.getItem("authToken");
   const user = JSON.parse(sessionStorage.getItem("user")); // Parse the stored user object
@@ -74,6 +75,21 @@ const Dashboard = () => {
   const [user, setUser] = useState(null);
   const [data, setData] = useState(null);
 
+  const [selected, setSelected] = useState("");
+  const [selected2, setSelected2] = useState("");
+  const [query, setQuery] = useState("");
+
+  const [selected3, setSelected3] = useState("Last7days"); // Default to "Last 7 days"
+
+  const lastdays = (e) => setSelected3(e.target.value);
+
+  const handleRiskAssessment = (event) => {
+    setSelected(event.target.value);
+  };
+  const bussinessunit = (event) => {
+    setSelected2(event.target.value);
+  };
+  
   const fetch = async () => {
     try {
       const dashboardData = await getDashboardData();
@@ -99,9 +115,52 @@ const Dashboard = () => {
   if (!data) {
     return <Loading />;
   }
+
+  
+  
+
+
   return (
     <>
       <Navbar />
+      <div className="riskselector">
+        <select value={selected} onChange={handleRiskAssessment} className="dropdown">
+          <option value="">Risk Assessment</option>
+          <option value="All Assessment">All Assessments</option>
+          <option value="Recent Assessement">Recent Assessements</option>
+          <option value="Critical Assessment">Critical Assessements</option>
+        </select>
+        {/* <p>Selected: {selected}</p> */}
+        <select value={selected2} onChange={bussinessunit} className="dropdown left">
+          <option value="">Site Code/Business Unit</option>
+          <option value="All Assessment">All Units</option>
+          <option value="Recent Assessement">Business Unit 1</option>
+          <option value="Critical Assessment">Business Unit 2</option>
+        </select>
+        {/* <p>Selected: {selected}</p> */}
+        <div className="search-container">
+  <svg className="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" viewBox="0 0 16 16">
+    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.115-.098zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+  </svg>
+        <input
+        type="text"
+        placeholder="Search risks..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        className="search-bar"
+        />
+    </div>
+
+    <select value={selected3} onChange={lastdays} className="dropdown">
+          <option value="Last24hours">Last 24 hours</option>
+          <option value="Last7days">Last 7 days</option>
+          <option value="Last30days">Last 30 days</option>
+          <option value="Last90days">Last 90 days</option>
+        </select>
+<button className="exportbtn"><FontAwesomeIcon icon={faFileExport}  />Export</button>
+
+      </div>
+
       <div className="dashboard-container">
         <Card
           title="Critical Risks"
