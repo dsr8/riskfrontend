@@ -451,7 +451,7 @@ span.MuiBox-root.css-3issc4 {
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 371px;
-  margin-top: 10%;
+  margin-top: 41%;
 }
 
 .search-bar:focus {
@@ -463,6 +463,7 @@ span.MuiBox-root.css-3issc4 {
   position: absolute;
   left: 10px;
   color: #888;
+  bottom: 35px;
 }
 .exportbtn{
   margin-top: 10%;
