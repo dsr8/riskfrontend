@@ -40,7 +40,12 @@ button {
   margin: 5px;
   cursor: pointer;
 }
-
+.risk-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .add-risk-btn {
   background-color: #4CAF50;
   color: white;
@@ -90,4 +95,13 @@ button {
 .loading-item{
   width: 200px;
   height: 200px;
+}
+
+.distribution-chat-container{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
