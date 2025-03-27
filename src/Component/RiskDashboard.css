@@ -5,7 +5,7 @@
     margin-bottom: 20px;
   }
   
-  .card {
+  .cardheatmap {
     max-width: 600px;
     text-align: center;
     padding: 20px;
@@ -13,9 +13,9 @@
     border-radius: 15px;
   }
   
-  .card-content {
+  .card-contentheatmap {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
   }
   
@@ -33,15 +33,24 @@
   }
   
   .risk-info h2 {
-    font-size: 30px;
+    font-size: 35px;
     margin: 0;
-  }
-  
-  .risk-info p {
-    font-size: 16px;
-    margin: 5px 0;
-  }
-  
+    font-weight: 400;
+    line-height: 1;
+}
+.risk-info p {
+    font-size: 21px;
+    margin: 0;
+    font-weight: 500;
+    line-height: 33px;
+}
+p.risk-score {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: #000;
+}
   .risk-score {
     font-size: 14px;
     color: #555;
@@ -50,18 +59,18 @@
   .heatmap-container {
     margin-top: 20px;
     padding: 10px;
-    background-color: #fff3cd;
     border-radius: 10px;
     text-align: center;
   }
   
+
   .heatmap-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    width: 180px;
+    width: 244px;
     margin: auto;
-    gap: 5px;
-  }
+    gap: 10px;
+}
   
   .heatmap-cell {
     width: 40px;
@@ -70,28 +79,38 @@
     border: 1px solid #ccc;
   }
   
-  .caption {
-    font-size: 12px;
-    color: #666;
-  }
+ 
+.caption {
+    font-size: 15px;
+    color: #000000;
+    margin: auto;
+    font-weight: 600;
+    padding: 15px 0;
+}
   
-  .risk-bottom {
-    margin-top: 30px;
+.risk-bottom {
+    margin-top: 5px;
     text-align: left;
-  }
+}
   
   .risk-section {
     padding: 10px;
   }
-  
+
   .risk-section h3 {
     font-size: 18px;
-  }
-  
-  .risk-section p {
-    font-size: 14px;
-    margin: 5px 0;
-  }
+    font-weight: 400;
+    color: #000000;
+}
+ 
+.risk-section p {
+    font-size: 16px;
+    margin: 10px 0;
+    border: 1px solid #000000;
+    padding: 7px;
+    border-radius: 5px;
+    font-weight: 400;
+}
   
   .badge {
     display: inline-block;
@@ -99,4 +118,5 @@
     padding: 5px 10px;
     border-radius: 5px;
     font-weight: bold;
+    margin-right: 6px;
   }

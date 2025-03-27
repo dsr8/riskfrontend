@@ -396,8 +396,8 @@ const RiskDashboard = ({
   return (
     <>
       <h1 className="risk-name">Calculated Risk</h1>
-      <div className="card" style={{ backgroundColor: secondaryColor }}>
-        <div className="card-content">
+      <div className="cardheatmap" style={{ backgroundColor: secondaryColor }}>
+        <div className="card-contentheatmap">
           <div className="risk-header">
             {/* Pie Chart with Needle */}
             <div className="pie-container">
