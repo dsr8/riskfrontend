@@ -310,6 +310,7 @@ import Loading from "./Loading";
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
 import { faHome, faUsers, faCog, faTachometerAlt, faExclamationTriangle,faClipboardCheck, faChartBar, faFileExport  } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import MyButton from "./MyButton";
 
 const getSessionData = () => {
   const token = sessionStorage.getItem("authToken");
@@ -455,6 +456,7 @@ const Dashboard = () => {
   return (
     <>
       <Navbar />
+      <MyButton />
       <div className="riskselector">
        <select value={selected} onChange={handleRiskAssessment} className="dropdown">
          <option value="">Risk Assessment</option>
