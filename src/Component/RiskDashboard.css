@@ -1,0 +1,102 @@
+.risk-name {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+    border-radius: 15px;
+  }
+  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .risk-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .pie-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .risk-info h2 {
+    font-size: 30px;
+    margin: 0;
+  }
+  
+  .risk-info p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .risk-score {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .heatmap-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff3cd;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .heatmap-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 180px;
+    margin: auto;
+    gap: 5px;
+  }
+  
+  .heatmap-cell {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .caption {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .risk-bottom {
+    margin-top: 30px;
+    text-align: left;
+  }
+  
+  .risk-section {
+    padding: 10px;
+  }
+  
+  .risk-section h3 {
+    font-size: 18px;
+  }
+  
+  .risk-section p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .badge {
+    display: inline-block;
+    background-color: #ffb400;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
