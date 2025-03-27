@@ -261,7 +261,7 @@ textarea::placeholder {
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
-  margin-top: 100px;
+  /* margin-top: 100px; */
   /* background-color: #0ab9fc36; */
 }
 
@@ -419,6 +419,7 @@ span.MuiBox-root.css-3issc4 {
   align-items: center;
   gap: 15px; /* Adds space between elements */
   padding: 10px;
+  justify-content: center;
   /* background: #f9f9f9;
   border-radius: 8px; */
 }
@@ -430,7 +431,7 @@ span.MuiBox-root.css-3issc4 {
   border-radius: 5px;
   background: white;
   cursor: pointer;
-  width: 220px;
+  width: 245px;
   margin-top: 10%;
 }
 
