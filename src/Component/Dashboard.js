@@ -456,7 +456,7 @@ const Dashboard = () => {
   return (
     <>
       <Navbar />
-      <MyButton />
+      {/* <MyButton /> */}
       <div className="riskselector">
        <select value={selected} onChange={handleRiskAssessment} className="dropdown">
          <option value="">Risk Assessment</option>

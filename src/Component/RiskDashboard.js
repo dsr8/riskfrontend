@@ -324,6 +324,7 @@
 import React from "react";
 import { PieChart, Pie, Cell } from "recharts";
 import "./RiskDashboard.css"; // Import CSS file
+import "@fortawesome/fontawesome-free/css/all.min.css"; // Import Font Awesome
 
 const RADIAN = Math.PI / 180;
 
@@ -462,11 +463,13 @@ const RiskDashboard = ({
           <h3>Probability</h3>
           <p>
             <span className="badge">3</span> High Probability
+            <span className="arrow">   <i className="fas fa-greater-than"></i></span>
           </p>
 
           <h3>Consequence</h3>
           <p>
             <span className="badge">2</span> Medium Consequence
+            <span className="arrow">   <i className="fas fa-greater-than"></i></span>
           </p>
         </div>
       </div>
