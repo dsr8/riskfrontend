@@ -456,10 +456,10 @@ const Dashboard = () => {
         setData(dashboardData.data);
         const uniqueTypes = Object.values(
           dashboardData.data.risks.reduce((acc, r) => {
-            if (!acc[r.type]) {
-              acc[r.type] = { name: r.type, color: getColor(r.type), count: 0 };
+            if (!acc[r.impact]) {
+              acc[r.impact] = { name: r.impact, color: getColor(r.impact), count: 0 };
             }
-            acc[r.type].count += 1;
+            acc[r.impact].count += 1;
             return acc;
           }, {})
         );
