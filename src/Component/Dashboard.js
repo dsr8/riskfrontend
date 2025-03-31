@@ -387,6 +387,30 @@ const getDashboardData = async () => {
       return null;
     }
   };
+  const getDashboardsitecode = async (sitecode) => {
+      
+    try {
+      const res = await axios.get(`https://addminwebworld.com/laravel/api/dashboard-data-sitecode`, {
+        params: { sitecode: sitecode }, // Sending nodays as a query parameter
+      });
+      return res.data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return null;
+    }
+  };
+  const getDashboardBussinessUnit = async (bussinessUnit) => {
+    
+    try {
+      const res = await axios.get(`https://addminwebworld.com/laravel/api/dashboard-data-bussinessUnit`, {
+        params: { bussinessUnit: bussinessUnit }, // Sending nodays as a query parameter
+      });
+      return res.data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return null;
+    }
+  };
 const Dashboard = () => {
   const [user, setUser] = useState(null);
   const [data, setData] = useState(null);
@@ -408,11 +432,21 @@ const Dashboard = () => {
     }
   };
 
-  const handleRiskAssessment = (event) => {
-    setSelected(event.target.value);
+  const SiteCode = async (event) => {
+    const sitecode = event.target.value;
+    setSelected(sitecode);
+    const dashboardData = await getDashboardsitecode(sitecode);
+    if (dashboardData?.success) {
+      setData(dashboardData.data);
+    }
   };
-  const bussinessunit = (event) => {
-    setSelected2(event.target.value);
+  const BussinessUnit = async (event) => {
+    const bussinessUnit = event.target.value;
+    setSelected2(bussinessUnit);
+    const dashboardData = await getDashboardBussinessUnit(bussinessUnit);
+    if (dashboardData?.success) {
+      setData(dashboardData.data);
+    }
   };
 
   const fetch = async () => {
@@ -458,18 +492,28 @@ const Dashboard = () => {
       <Navbar />
       {/* <MyButton /> */}
       <div className="riskselector">
-       <select value={selected} onChange={handleRiskAssessment} className="dropdown">
-         <option value="">Risk Assessment</option>
-         <option value="All Assessment">All Assessments</option>
-         <option value="Recent Assessement">Recent Assessements</option>
-         <option value="Critical Assessment">Critical Assessements</option>
+      <select value={selected2} onChange={BussinessUnit} className="dropdown">
+         <option value="">Business Unit</option>
+         <option value="FIN">FIN: Finance & Accounting</option>
+         <option value="HR">HR: Human Resources</option>
+         <option value="SM">SM: Sales & Marketing</option>
+         <option value="CS">CS: Customer Support</option>
+         <option value="IT">IT: Information Technology</option>
+         <option value="OPS">OPS: Operations Management</option>
+         <option value="R&D">R&D: Research & Development</option>
+         <option value="LSC">LSC: Logistics & Supply Chain</option>
         </select>
         {/* <p>Selected: {selected}</p> */}
-        <select value={selected2} onChange={bussinessunit} className="dropdown left">
-          <option value="">Site Code/Business Unit</option>
-          <option value="All Assessment">All Units</option>
-          <option value="Recent Assessement">Business Unit 1</option>
-         <option value="Critical Assessment">Business Unit 2</option>
+        <select value={selected} onChange={SiteCode} className="dropdown left">
+          <option value="">Site Code</option>
+          <option value="HQ01">HQ01: Headquarters</option>
+          <option value="PLT02">PLT02: Manufacturing Plant - West</option>
+         <option value="BRN03t">BRN03: Branch Offie - North</option>
+         <option value="RDC04">RDC04: Regional Distribution Centre</option>
+         <option value="DC05">DC05: Data Center</option>
+         <option value="LAB06">LAB06: Research Laboratory</option>
+         <option value="WH07">WH07: Warehouse</option>
+         <option value="RMT08">RMT08: Remote Offie</option>
        </select>
        {/* <p>Selected: {selected}</p> */}
         <div className="search-container">
