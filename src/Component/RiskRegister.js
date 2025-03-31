@@ -24,7 +24,8 @@ const RiskRegister = () => {
   const [status, setStatus]=useState(1);
   const [value, setValue] = useState(0);
   const [value2, setValue2] = useState(0);
-
+  const [sitecode , setSitecode]=useState('');
+  const [bussinessunit , setBussinessunit]=useState('');
 
 
   const [risks, setRisks] = useState([]); // State to store risks
@@ -70,6 +71,8 @@ const RiskRegister = () => {
       status:status,
       value:value,
       value2:value2,
+      sitecode:sitecode,
+      bussinessunit:bussinessunit,
     };
 
     try {
@@ -230,11 +233,11 @@ const RiskRegister = () => {
                 <option value="" disabled hidden>
                   Select Risk Type
                 </option>
-                <option value="norisk">No Risk</option>
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-                <option value="critical">Critical</option>
+                <option value="Cybersecurity">Cybersecurity</option>
+                <option value="Operational">Operational</option>
+                <option value="compliance">compliance</option>
+                {/* <option value="high">High</option>
+                <option value="critical">Critical</option> */}
               </select>
 
               <label>Category *</label>
@@ -242,13 +245,48 @@ const RiskRegister = () => {
                 <option value="" disabled hidden>
                   Select Category
                 </option>
-                <option value="norisk">No Risk</option>
+                <option value="BusinessContinuity">Business Continuity</option>
+                <option value="PolicyEnforcement">Policy Enforcement</option>
+                <option value="SocialEngineering">Social Engineering</option>
+                <option value="DataProtection">Data Protection</option>
+                {/* <option value="norisk">No Risk</option>
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
-                <option value="critical">Critical</option>
+                <option value="critical">Critical</option> */}
               </select>
 
+              <label>Site Code *</label>
+              <select value={sitecode} onChange={(e) => setSitecode(e.target.value)}>
+                <option value="" disabled hidden>
+                  Select Site Code
+                </option>
+                <option value="HQ01">HQ01: Headquarters</option>
+          <option value="PLT02">PLT02: Manufacturing Plant - West</option>
+         <option value="BRN03t">BRN03: Branch Offie - North</option>
+         <option value="RDC04">RDC04: Regional Distribution Centre</option>
+         <option value="DC05">DC05: Data Center</option>
+         <option value="LAB06">LAB06: Research Laboratory</option>
+         <option value="WH07">WH07: Warehouse</option>
+         <option value="RMT08">RMT08: Remote Offie</option>
+                {/* <option value="high">High</option>
+                <option value="critical">Critical</option> */}
+              </select>
+              <label>Business Unit *</label>
+              <select value={bussinessunit} onChange={(e) => setBussinessunit(e.target.value)}>
+                <option value="" disabled hidden>
+                  Select Business Unit
+                </option>
+                <option value="FIN">FIN: Finance & Accounting</option>
+         <option value="HR">HR: Human Resources</option>
+         <option value="SM">SM: Sales & Marketing</option>
+         <option value="CS">CS: Customer Support</option>
+         <option value="IT">IT: Information Technology</option>
+         <option value="OPS">OPS: Operations Management</option>
+         <option value="R&D">R&D: Research & Development</option>
+         <option value="LSC">LSC: Logistics & Supply Chain</option>
+        </select>
+        
               <div className='riskname'>
       <label>Inherent Risk Percentage: {value}%</label>
       <Slider 
