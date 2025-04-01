@@ -492,6 +492,7 @@ const Dashboard = () => {
       <Navbar />
       {/* <MyButton /> */}
       <div className="riskselector">
+        <div className="risklock">
       <select value={selected2} onChange={BussinessUnit} className="dropdown">
          <option value="">Business Unit</option>
          <option value="FIN">FIN: Finance & Accounting</option>
@@ -516,18 +517,7 @@ const Dashboard = () => {
          <option value="RMT08">RMT08: Remote Offie</option>
        </select>
        {/* <p>Selected: {selected}</p> */}
-        <div className="search-container">
-  <svg className="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" viewBox="0 0 16 16">
-    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.115-.098zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-   </svg>
-         <input
-        type="text"
-        placeholder="Search risks..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        className="search-bar"
-        />
-    </div>
+ 
 
     <select value={selected3} onChange={lastdays} className="dropdown">
           <option value="Last24hours">Last 24 hours</option>
@@ -535,6 +525,8 @@ const Dashboard = () => {
           <option value="Last30days">Last 30 days</option>
           <option value="90days">Last 90 days</option>
         </select>
+
+        </div>
      <button className="exportbtn"><FontAwesomeIcon icon={faFileExport}  />Export</button>
 
       </div>

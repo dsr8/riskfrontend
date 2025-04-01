@@ -424,6 +424,12 @@ span.MuiBox-root.css-3issc4 {
   border-radius: 8px; */
 }
 
+.risklock {
+  width: 86%;
+  display: flex;
+  gap: 20px;
+}
+
 .dropdown {
   padding: 10px;
   font-size: 16px;
